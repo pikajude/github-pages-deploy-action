@@ -58,7 +58,7 @@ describe('git', () => {
       expect(execute).toBeCalledTimes(5)
     })
 
-    it('should unset email if it does not exist', async () => {
+    it('should not set email if it does not exist', async () => {
       Object.assign(action, {
         hostname: 'github.com',
         silent: false,
@@ -75,7 +75,7 @@ describe('git', () => {
       })
 
       await init(action)
-      expect(execute).toBeCalledTimes(5)
+      expect(execute).toBeCalledTimes(4)
     })
 
     it('should catch when a function throws an error', async () => {
