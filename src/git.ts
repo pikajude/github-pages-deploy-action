@@ -28,6 +28,13 @@ export async function init(action: ActionInterface): Promise<void | Error> {
         action.workspace,
         action.silent
       )
+    } else {
+      /* If a user specifies that they don't want their email displayed, unset it from the config. */
+      await execute(
+        `git config --unset user.email`,
+        action.workspace,
+        action.silent
+      )
     }
 
     try {
