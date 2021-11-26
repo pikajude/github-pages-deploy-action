@@ -15,9 +15,7 @@ export const isNullOrUndefined = (
 ): boolean => {
   console.log('value', value, 'typeof', typeof value)
 
-  return allowEmptyString
-    ? typeof value === 'undefined' || value === null
-    : typeof value === 'undefined' || value === null || value === ''
+  return typeof value === 'undefined' || value === null || value === ''
 }
 
 /* Generates a token type used for the action. */
