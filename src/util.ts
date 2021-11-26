@@ -12,10 +12,13 @@ const replaceAll = (input: string, find: string, replace: string): string =>
 export const isNullOrUndefined = (
   value: unknown,
   allowEmptyString = false
-): boolean =>
-  allowEmptyString
+): boolean => {
+  console.log('value', value, 'typeof', typeof value)
+
+  return allowEmptyString
     ? typeof value === 'undefined' || value === null
     : typeof value === 'undefined' || value === null || value === ''
+}
 
 /* Generates a token type used for the action. */
 export const generateTokenType = (action: ActionInterface): string =>
