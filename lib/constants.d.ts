@@ -28,6 +28,8 @@ export interface ActionInterface {
     isTest: TestFlag;
     /** The git config name. */
     name?: string;
+    /** Shell script to run before creating a new commit containing the target folder */
+    preCommitScript?: string;
     /** The repository path, for example JamesIves/github-pages-deploy-action. */
     repositoryName?: string;
     /** The fully qualified repositpory path, this gets auto generated if repositoryName is provided. */
